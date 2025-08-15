@@ -1,0 +1,25 @@
+graph TB
+    A[Host Machine] -->|Manages| B[Container Network]
+    A -->|Orchestrates| C[AI Services Layer]
+    A -->|Syncs| D[Mobile Device]
+    
+    B --> E[dev-main:10.89.0.10]
+    B --> F[webdev:10.89.0.20]
+    B --> G[python-dev:10.89.0.30]
+    B --> H[ai-os:10.89.0.40]
+    B --> I[monitoring:10.89.0.50]
+    
+    C --> J[Ollama Service]
+    C --> K[LocalAI Gateway]
+    C --> L[AI Agent Monitor]
+    
+    D -->|Secure Tunnel| B
+    D -->|Task Offload| C
+    
+    I -->|Health Check| E
+    I -->|Health Check| F
+    I -->|Health Check| G
+    I -->|Metrics| H
+    
+    L -->|Auto-Scale| B
+    L -->|Optimize| C
